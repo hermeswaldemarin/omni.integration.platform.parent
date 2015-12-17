@@ -4,8 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>br.com.omniplusoft</groupId>
-	<artifactId>ctiplatform-dependencies</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<artifactId>gatewayplatform-dependencies</artifactId>
+	<version>0.0.4-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>CTIPlatform</name>
@@ -24,10 +24,12 @@
 	</properties>
 
 	<dependencies>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-websocket</artifactId>
@@ -38,11 +40,31 @@
 			<artifactId>hsqldb</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+            <groupId>org.logback-extensions</groupId>
+            <artifactId>logback-ext-spring</artifactId>
+            <version>0.1.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.reflections</groupId>
+            <artifactId>reflections</artifactId>
+            <version>0.9.9-RC2</version>
+        </dependency>
+
 	</dependencies>
 	
 	<build>
@@ -51,6 +73,18 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+		       <groupId>org.apache.maven.plugins</groupId>
+		       <artifactId>maven-jar-plugin</artifactId>
+		       <version>2.4</version>
+		       <executions>
+		         <execution>
+		           <goals>
+		             <goal>test-jar</goal>
+		           </goals>
+		         </execution>
+		       </executions>
+		     </plugin>
 		</plugins>
 	</build>
 	
